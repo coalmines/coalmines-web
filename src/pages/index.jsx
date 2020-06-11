@@ -1,31 +1,6 @@
 import React, { useState } from 'react';
-
-const Data = () => {
-  return <p>I have some beautiful data.</p>;
-}
-
-const Spinner = () => {
-  return (
-    <>
-      <div className="spin">Waiting for data...</div>
-      <style jsx>{`
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(359deg);
-          }
-        }
-        .spin {
-          width: 50%;
-          margin-top: 100px;
-          animation: spin 2s infinite linear;
-        }
-      `}</style>
-    </>
-  );
-}
+import Data from '../components/Data';
+import Spinner from '../components/Spinner';
 
 export default () => {
   const [loading, setLoading] = useState(true);
