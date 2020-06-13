@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Data from '../components/Data';
-import Spinner from '../components/Spinner';
+import LoadingAnimation from '../components/LoadingAnimation';
 
 export default () => {
   const [loading, setLoading] = useState(true);
@@ -8,35 +8,39 @@ export default () => {
   return (
     <div>
       <h1>Hello!</h1>
-      {loading ? <Spinner>Loading...</Spinner> : <Data />}
+      {loading ? <LoadingAnimation>Loading...</LoadingAnimation> : <Data />}
       <div className="spinners">
+            <LoadingAnimation type="spin">
+            </LoadingAnimation>
         <div className="widget">
-          <div className="spin">
-            <Spinner type="spin">
-              You spin my head right round...
-            </Spinner>
+          <div className="spinner">
+            <LoadingAnimation type="spinner">
+              <div>You spin my head</div>
+              🙂
+              <div>right round...</div>
+            </LoadingAnimation>
           </div>
         </div>
         <div className="widget">
-          <div className="swing">
-            <Spinner type="swing">
+          <div className="seesaw">
+            <LoadingAnimation type="seesaw">
               <span className="flex">
                 <div>x</div>
                 <div>x</div>
               </span>
               <hr />
               <div>o</div>
-            </Spinner>
+            </LoadingAnimation>
           </div>
         </div>
         <div className="widget">
-          <div className="pendulum">
-            <Spinner type="pendulum">tic<hr />toc</Spinner>
+          <div className="swing">
+            <LoadingAnimation type="swing">tic<hr />toc</LoadingAnimation>
           </div>
         </div>
       </div>
       <style jsx>{`
-        .spinners {
+        .widgets {
           margin-top: 60px;
         }
         .widget {
@@ -48,13 +52,13 @@ export default () => {
           justify-content: center;
           background-color: #CFCFCF;
         }
-        .widget .spin {
-          width: 40%;
+        .widget .spinner {
+          width: 45%;
         }
-        .widget .swing {
+        .widget .seesaw {
           width: 80%;
         }
-        .widget .pendulum {
+        .widget .swing {
           width: 60%;
         }
         .flex {

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Spinner = ({ children, type = "spin" }) => {
+const LoadingAnimation = ({ children, type = "spinner" }) => {
   return (
     <>
       <div className={type}>{children}</div>
       <style jsx>{`
-        @keyframes spin {
+        @keyframes spinner {
           0% {
             transform: rotate(0deg);
           }
@@ -13,11 +13,11 @@ const Spinner = ({ children, type = "spin" }) => {
             transform: rotate(359deg);
           }
         }
-        .spin {
+        .spinner {
           text-align: center;
-          animation: spin 2s infinite linear;
+          animation: spinner 2s infinite linear;
         }
-        @keyframes swing {
+        @keyframes seesaw {
           0% {
             transform: rotate(30deg);
           }
@@ -28,11 +28,11 @@ const Spinner = ({ children, type = "spin" }) => {
             transform: rotate(30deg);
           }
         }
-        .swing {
+        .seesaw, .gigagampfa {
           text-align: center;
-          animation: swing 2s infinite ease-in-out;
+          animation: seesaw 2s infinite ease-in-out;
         }
-        @keyframes pendulum {
+        @keyframes swing {
           0% {
             transform: rotate(-60deg);
           }
@@ -43,12 +43,12 @@ const Spinner = ({ children, type = "spin" }) => {
             transform: rotate(-60deg);
           }
         }
-        .pendulum {
-          animation: pendulum 2s infinite ease-in-out;
+        .swing {
+          animation: swing 2s infinite ease-in-out;
         }
       `}</style>
     </>
   );
 }
 
-export default Spinner;
+export default LoadingAnimation;
