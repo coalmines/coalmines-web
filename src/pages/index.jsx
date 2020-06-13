@@ -13,6 +13,7 @@ export default () => {
             <LoadingAnimation type="spin">
             </LoadingAnimation>
         <div className="widget">
+          <h3>Spinner</h3>
           <div className="spinner">
             <LoadingAnimation type="spinner">
               <div>You spin my head</div>
@@ -22,6 +23,7 @@ export default () => {
           </div>
         </div>
         <div className="widget">
+          <h3>Seesaw</h3>
           <div className="seesaw">
             <LoadingAnimation type="seesaw">
               <span className="flex">
@@ -34,8 +36,11 @@ export default () => {
           </div>
         </div>
         <div className="widget">
+          <h3>Swing</h3>
           <div className="swing">
-            <LoadingAnimation type="swing">tic<hr />toc</LoadingAnimation>
+            <LoadingAnimation type="swing">
+              tic<hr />toc
+            </LoadingAnimation>
           </div>
         </div>
       </div>
@@ -44,22 +49,26 @@ export default () => {
           margin-top: 60px;
         }
         .widget {
-          width: 150px;
-          height: 100px;
-          margin: 60px 30px;
+          width: 200px;
+          height: 120px;
+          margin: 30px 15px;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
           background-color: #CFCFCF;
+          padding: 12px;
+        }
+        h3 {
+          margin-right: 20px;
         }
         .widget .spinner {
           width: 45%;
         }
         .widget .seesaw {
-          width: 80%;
+          width: 60%;
         }
         .widget .swing {
-          width: 60%;
+          width: 50%;
         }
         .flex {
           display: flex;
