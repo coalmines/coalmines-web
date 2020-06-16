@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
   return (
@@ -6,11 +6,8 @@ const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
       <div className={type}>{children}</div>
       <style jsx>{`
         @keyframes spinner {
-          0% {
-            transform: rotate(0deg);
-          }
           100% {
-            transform: rotate(359deg);
+            transform: rotate(360deg);
           }
         }
         .spinner {
@@ -28,7 +25,8 @@ const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
             transform: rotate(30deg);
           }
         }
-        .seesaw, .gigagampfa {
+        .seesaw,
+        .gigagampfa {
           text-align: center;
           animation: seesaw ${duration} infinite ease-in-out;
         }
@@ -49,6 +47,6 @@ const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
       `}</style>
     </>
   );
-}
+};
 
 export default LoadingAnimation;
