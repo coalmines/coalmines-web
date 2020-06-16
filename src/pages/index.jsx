@@ -13,48 +13,59 @@ export default () => {
       <div className="widgets">
         <div className="widget">
           <h3>Gorgeous Gauge</h3>
-          <Gauge />
+          <div className="center">
+            <Gauge />
+          </div>
         </div>
         <div className="widget">
           <h3>Spinner</h3>
-          <div className="spinner">
-            <LoadingAnimation type="spinner">
-              <div>You spin my head</div>
-              🙂
-              <div>right round...</div>
-            </LoadingAnimation>
+          <div className="center">
+            <div className="spinner">
+              <LoadingAnimation type="spinner">
+                <div>You spin my head</div>
+                🙂
+                <div>right round...</div>
+              </LoadingAnimation>
+            </div>
           </div>
         </div>
         <div className="widget">
           <h3>Seesaw</h3>
-          <div className="seesaw">
-            <LoadingAnimation type="gigagampfa" duration="2.8s">
-              <span className="flex">
-                <div>x</div>
-                <div>x</div>
-              </span>
-              <hr />
-            </LoadingAnimation>
+          <div className="center">
+            <div className="seesaw">
+              <LoadingAnimation type="gigagampfa" duration="2.8s">
+                <span className="flex">
+                  <div>x</div>
+                  <div>x</div>
+                </span>
+                <hr />
+              </LoadingAnimation>
+            </div>
           </div>
         </div>
         <div className="widget">
           <h3>Swing</h3>
-          <div className="swing">
-            <LoadingAnimation type="swing" duration="3.2s">
-              tic
-              <hr />
-              toc
-            </LoadingAnimation>
+          <div className="center">
+            <div className="swing">
+              <LoadingAnimation type="swing" duration="3.2s">
+                tic
+                <hr />
+                toc
+              </LoadingAnimation>
+            </div>
           </div>
         </div>
       </div>
       <style jsx>
         {`
           .widgets {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
             margin-top: 60px;
           }
           .widget {
-            width: 200px;
+            max-width: 320px;
             height: 120px;
             margin: 30px 15px;
             display: flex;
@@ -65,6 +76,11 @@ export default () => {
           }
           h3 {
             margin-right: 20px;
+          }
+          .center {
+            display: flex;
+            justify-content: center;
+            flex: 1;
           }
           .widget .spinner {
             width: 45%;
