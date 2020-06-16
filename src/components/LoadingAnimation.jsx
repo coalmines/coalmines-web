@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoadingAnimation = ({ children, type = "spinner" }) => {
+const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
   return (
     <>
       <div className={type}>{children}</div>
@@ -15,7 +15,7 @@ const LoadingAnimation = ({ children, type = "spinner" }) => {
         }
         .spinner {
           text-align: center;
-          animation: spinner 2s infinite linear;
+          animation: spinner ${duration} infinite linear;
         }
         @keyframes seesaw {
           0% {
@@ -30,7 +30,7 @@ const LoadingAnimation = ({ children, type = "spinner" }) => {
         }
         .seesaw, .gigagampfa {
           text-align: center;
-          animation: seesaw 2s infinite ease-in-out;
+          animation: seesaw ${duration} infinite ease-in-out;
         }
         @keyframes swing {
           0% {
@@ -44,7 +44,7 @@ const LoadingAnimation = ({ children, type = "spinner" }) => {
           }
         }
         .swing {
-          animation: swing 2s infinite ease-in-out;
+          animation: swing ${duration} infinite ease-in-out;
         }
       `}</style>
     </>
