@@ -67,7 +67,7 @@ export default () => {
           .widget {
             max-width: 320px;
             height: 120px;
-            margin: 30px 15px;
+            margin: 10px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
