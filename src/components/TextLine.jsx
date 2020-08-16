@@ -20,12 +20,12 @@ const TextLine = ({ children, label = "" }) => {
         }
         .text::before {
           content: "";
-          padding: 6px 8px 6px 0;
+          padding: 4px 8px 8px 0;
           border-top: 2px solid ${borderColor};
           border-left: 1px solid ${borderColor};
         }
         .label {
-          font-size: 8px;
+          font-size: 10px;
           position: absolute;
           left: 12px;
           top: -5px;
