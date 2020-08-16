@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Data from "../components/Data";
 import Gauge from "../components/Gauge";
 import TextLine from "../components/TextLine";
+import Button from "../components/Button";
 import LoadingAnimation from "../components/LoadingAnimation";
 
 export default () => {
@@ -12,6 +13,9 @@ export default () => {
       <h1>Hello!</h1>
       {loading ? <LoadingAnimation>Loading...</LoadingAnimation> : <Data />}
       <div className="widgets">
+        <div className="flex widget">
+          <Button>Buttons are nice</Button>
+        </div>
         <div className="flex widget">
           <TextLine>a line of text</TextLine>
           <TextLine label="woop woop">a labeled line of text</TextLine>
