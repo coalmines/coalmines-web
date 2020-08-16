@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Data from "../components/Data";
 import Gauge from "../components/Gauge";
+import TextLine from "../components/TextLine";
 import LoadingAnimation from "../components/LoadingAnimation";
 
 export default () => {
@@ -11,6 +12,10 @@ export default () => {
       <h1>Hello!</h1>
       {loading ? <LoadingAnimation>Loading...</LoadingAnimation> : <Data />}
       <div className="widgets">
+        <div className="flex widget">
+          <TextLine>a line of text</TextLine>
+          <TextLine label="woop woop">a labeled line of text</TextLine>
+        </div>
         <div className="widget">
           <h3>Gorgeous Gauge</h3>
           <div className="center">
