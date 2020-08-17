@@ -1,12 +1,13 @@
 import React from "react";
 import {
   backgroundColor,
-  borderColor,
+  borderColor as regularBorderColor,
   textColor,
   horizontalPadding,
 } from "../theme";
 
-const TextLine = ({ children, label = "" }) => {
+const TextLine = ({ children, label = "", active }) => {
+  const borderColor = active ? "#50C050" : regularBorderColor;
   return (
     <>
       <span className="text">

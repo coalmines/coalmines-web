@@ -16,6 +16,22 @@ export default () => {
         <div className="flex widget">
           <Button>Buttons are nice</Button>
         </div>
+        <div className="widget">
+          <div className="card">
+            <ul>
+              <li>
+                <TextLine>menu 1</TextLine>
+              </li>
+              <li>
+                <TextLine>menu 2</TextLine>
+              </li>
+              <li>
+                <TextLine active>menu 3</TextLine>
+              </li>
+            </ul>
+            <div className="card-body">Lorem ipsum...</div>
+          </div>
+        </div>
         <div className="flex widget">
           <TextLine>a line of text</TextLine>
           <TextLine label="woop woop">a labeled line of text</TextLine>
@@ -67,6 +83,31 @@ export default () => {
       </div>
       <style jsx>
         {`
+          .card {
+            width: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .card-body {
+            margin-top: 8px;
+            padding: 10px;
+          }
+          ul {
+            position: relative;
+            top: 8px;
+            height: 24px;
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          li {
+            display: inline;
+            margin: 0;
+            padding: 0;
+          }
           .widgets {
             display: flex;
             flex-direction: column;
