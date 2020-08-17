@@ -1,9 +1,12 @@
 import React from "react";
+import {
+  backgroundColor,
+  borderColor,
+  textColor,
+  horizontalPadding,
+} from "../theme";
 
 const Button = ({ children }) => {
-  const backgroundColor = "#F4F4FC";
-  const borderColor = "#3030C0";
-  const textColor = "202020";
   return (
     <>
       <button>{children}</button>
@@ -13,13 +16,13 @@ const Button = ({ children }) => {
           border: none;
           border-bottom: 2px solid transparent;
           background: ${backgroundColor};
-          padding: 8px 8px 6px 8px;
+          padding: 8px ${horizontalPadding} 6px;
         }
         button::before,
         button::after {
           position: absolute;
           top: 0;
-          width: 8px;
+          width: ${horizontalPadding};
           height: 100%;
           content: "";
         }

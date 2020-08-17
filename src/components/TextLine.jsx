@@ -1,9 +1,12 @@
 import React from "react";
+import {
+  backgroundColor,
+  borderColor,
+  textColor,
+  horizontalPadding,
+} from "../theme";
 
 const TextLine = ({ children, label = "" }) => {
-  const backgroundColor = "#F4F4FC";
-  const borderColor = "#3030C0";
-  const textColor = "202020";
   return (
     <>
       <span className="text">
@@ -14,7 +17,7 @@ const TextLine = ({ children, label = "" }) => {
         .text {
           background: ${backgroundColor};
           position: relative;
-          padding: 8px 8px 6px 8px;
+          padding: 8px ${horizontalPadding} 6px;
           border-bottom: 2px solid ${borderColor};
           border-right: 1px solid ${borderColor};
         }
@@ -22,7 +25,7 @@ const TextLine = ({ children, label = "" }) => {
           position: absolute;
           top: 0;
           left: 0;
-          width: 8px;
+          width: ${horizontalPadding};
           height: 100%;
           content: "";
           content: "";
