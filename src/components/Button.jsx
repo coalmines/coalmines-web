@@ -12,29 +12,30 @@ const Button = ({ children }) => {
       <button>{children}</button>
       <style jsx>{`
         button {
+          height: 36px;
           position: relative;
           border: none;
-          border-bottom: 2px solid transparent;
           background: ${backgroundColor};
-          padding: 8px ${horizontalPadding} 6px;
+          padding: 8px ${horizontalPadding};
+          border-top: 2px solid ${borderColor};
+          border-bottom: 2px solid ${borderColor};
         }
         button::before,
         button::after {
           position: absolute;
-          top: 0;
           width: ${horizontalPadding};
-          height: 100%;
+          height: ${horizontalPadding};
           content: "";
         }
         button::before {
+          bottom: 0;
           left: 0;
-          border-bottom: 2px solid ${borderColor};
-          border-left: 1px solid ${borderColor};
+          border-left: 2px solid ${borderColor};
         }
         button::after {
+          top: 0;
           right: 0;
-          border-top: 2px solid ${borderColor};
-          border-right: 1px solid ${borderColor};
+          border-right: 2px solid ${borderColor};
         }
       `}</style>
     </>

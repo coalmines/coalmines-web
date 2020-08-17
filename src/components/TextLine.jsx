@@ -16,11 +16,14 @@ const TextLine = ({ children, label = "", active }) => {
       </span>
       <style jsx>{`
         .text {
-          background: ${backgroundColor};
           position: relative;
+          height: 20px;
+          display: inline-flex;
+          align-items: center;
+          background: ${backgroundColor};
           padding: 8px ${horizontalPadding} 6px;
           border-bottom: 2px solid ${borderColor};
-          border-right: 1px solid ${borderColor};
+          border-left: 2px solid ${borderColor};
         }
         .text::before {
           position: absolute;
@@ -31,12 +34,11 @@ const TextLine = ({ children, label = "", active }) => {
           content: "";
           content: "";
           border-top: 2px solid ${borderColor};
-          border-left: 1px solid ${borderColor};
         }
         .label {
           font-size: 10px;
           position: absolute;
-          left: 12px;
+          left: 16px;
           top: -5px;
         }
       `}</style>
