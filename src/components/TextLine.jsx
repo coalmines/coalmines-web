@@ -14,13 +14,18 @@ const TextLine = ({ children, label = "" }) => {
         .text {
           background: ${backgroundColor};
           position: relative;
-          padding: 6px 8px 6px 0;
+          padding: 8px 8px 6px 8px;
           border-bottom: 2px solid ${borderColor};
           border-right: 1px solid ${borderColor};
         }
         .text::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 100%;
           content: "";
-          padding: 4px 8px 8px 0;
+          content: "";
           border-top: 2px solid ${borderColor};
           border-left: 1px solid ${borderColor};
         }

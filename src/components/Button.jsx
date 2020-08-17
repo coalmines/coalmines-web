@@ -9,19 +9,27 @@ const Button = ({ children }) => {
       <button>{children}</button>
       <style jsx>{`
         button {
+          position: relative;
           border: none;
+          border-bottom: 2px solid transparent;
           background: ${backgroundColor};
-          padding: 6px 0;
+          padding: 8px 8px 6px 8px;
+        }
+        button::before,
+        button::after {
+          position: absolute;
+          top: 0;
+          width: 8px;
+          height: 100%;
+          content: "";
         }
         button::before {
-          content: "";
-          padding: 6px 8px 4px 0;
+          left: 0;
           border-bottom: 2px solid ${borderColor};
           border-left: 1px solid ${borderColor};
         }
         button::after {
-          content: "";
-          padding: 4px 0 6px 8px;
+          right: 0;
           border-top: 2px solid ${borderColor};
           border-right: 1px solid ${borderColor};
         }
