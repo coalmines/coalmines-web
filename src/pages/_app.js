@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
         }
         body {
           color: #080808;
-          font-size: 10pt;
+          font-size: 12px;
         }
         *,
         *::before,

@@ -81,7 +81,7 @@ export default () => {
       <div className="widgets">
         <div className="widget">
           <h3>Buttons</h3>
-          <div className="flex center">
+          <div className="flex column">
             <Button>Buttons are nice</Button>
             <Button disabled>have another</Button>
           </div>
@@ -100,7 +100,7 @@ export default () => {
         </div>
         <div className="widget">
           <h3>TextLine</h3>
-          <div className="flex center">
+          <div className="flex column">
             <TextLine input>a text line</TextLine>
             <TextLine label="woop woop">a labeled text</TextLine>
           </div>
@@ -163,6 +163,7 @@ export default () => {
           }
           .widget.big {
             height: 240px;
+            max-width: 400px;
           }
           .widget {
             max-width: 320px;
@@ -190,11 +191,14 @@ export default () => {
             width: 60%;
           }
           .widget .swing {
-            width: 80%;
+            width: 60%;
           }
           .flex {
             display: flex;
             justify-content: space-between;
+          }
+          .column {
+            flex-direction: column;
           }
         `}
       </style>

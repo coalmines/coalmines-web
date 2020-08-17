@@ -10,6 +10,7 @@ const TextLine = ({ children, label = "", active, input }) => {
   const borderColor = active ? "#50C050" : regularBorderColor;
   const [value, setValue] = useState("some input");
   const onChange = (e) => setValue(e.target.value);
+  // FIXME: factor out input into its own component
   return (
     <>
       <span className="text">
@@ -18,8 +19,8 @@ const TextLine = ({ children, label = "", active, input }) => {
       </span>
       <style jsx>{`
         input {
-          display: inline;
-          width: 80px;
+          width: 160px;
+          height: 20px;
         }
         .text {
           position: relative;
