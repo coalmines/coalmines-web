@@ -29,33 +29,81 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
   },
 ];
 
+const Card = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  return (
+    <>
+      <div className="card">
+        <ul>
+          {menu.map(({ id, label }, i) => (
+            <li key={id} onClick={() => setActiveTab(i)}>
+              <TextLine active={i === activeTab}>{label}</TextLine>
+            </li>
+          ))}
+        </ul>
+        <div className="card-body">{menu[activeTab].text}</div>
+      </div>
+      <style jsx>{`
+        .card {
+          width: 100%;
+          background-color: #f0f0f0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .card-body {
+          padding: 10px;
+        }
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        li {
+          display: inline;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+    </>
+  );
+};
+
 export default () => {
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState(0);
   setTimeout(() => setLoading(false), 3400);
   return (
     <div>
       <h1>Hello!</h1>
       {loading ? <LoadingAnimation>Loading...</LoadingAnimation> : <Data />}
+      <h2>Controls</h2>
       <div className="widgets">
-        <div className="flex widget">
-          <Button>Buttons are nice</Button>
-        </div>
-        <div className="big widget">
-          <div className="card">
-            <ul>
-              {menu.map(({ id, label }, i) => (
-                <li key={id} onClick={() => setActiveTab(i)}>
-                  <TextLine active={i === activeTab}>{label}</TextLine>
-                </li>
-              ))}
-            </ul>
-            <div className="card-body">{menu[activeTab].text}</div>
+        <div className="widget">
+          <h3>Buttons</h3>
+          <div className="flex center">
+            <Button>Buttons are nice</Button>
+            <Button disabled>have another</Button>
           </div>
         </div>
-        <div className="flex widget">
-          <TextLine>a line of text</TextLine>
-          <TextLine label="woop woop">a labeled line of text</TextLine>
+        <div className="big widget">
+          <h3>Card with Tabs</h3>
+          {loading ? (
+            <div className="flex center">
+              <LoadingAnimation type="gigagampfa" duration="2.8s">
+                Loading...
+              </LoadingAnimation>
+            </div>
+          ) : (
+            <Card />
+          )}
+        </div>
+        <div className="widget">
+          <h3>TextLine</h3>
+          <div className="flex center">
+            <TextLine input>a text line</TextLine>
+            <TextLine label="woop woop">a labeled text</TextLine>
+          </div>
         </div>
         <div className="widget">
           <h3>Gorgeous Gauge</h3>
@@ -63,6 +111,9 @@ export default () => {
             <Gauge />
           </div>
         </div>
+      </div>
+      <h2>Animations</h2>
+      <div className="widgets">
         <div className="widget">
           <h3>Spinner</h3>
           <div className="center">
@@ -79,7 +130,7 @@ export default () => {
           <h3>Seesaw</h3>
           <div className="center">
             <div className="seesaw">
-              <LoadingAnimation type="gigagampfa" duration="2.8s">
+              <LoadingAnimation type="seesaw" duration="2.8s">
                 <span className="flex">
                   <div>x</div>
                   <div>x</div>
@@ -89,7 +140,7 @@ export default () => {
             </div>
           </div>
         </div>
-        <div className="widget">
+        <div className="big widget">
           <h3>Swing</h3>
           <div className="center">
             <div className="swing">
@@ -104,41 +155,20 @@ export default () => {
       </div>
       <style jsx>
         {`
-          .card {
-            width: 100%;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          .card-body {
-            padding: 10px;
-          }
-          ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-          }
-          li {
-            display: inline;
-            margin: 0;
-            padding: 0;
-          }
           .widgets {
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin-top: 60px;
+            margin-top: 10px;
           }
           .widget.big {
-            height: 200px;
+            height: 240px;
           }
           .widget {
             max-width: 320px;
             height: 120px;
             margin: 10px 15px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
             background-color: #cfcfcf;
             padding: 12px;
@@ -147,8 +177,10 @@ export default () => {
             margin-right: 20px;
           }
           .center {
+            height: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex: 1;
           }
           .widget .spinner {
@@ -158,7 +190,7 @@ export default () => {
             width: 60%;
           }
           .widget .swing {
-            width: 50%;
+            width: 80%;
           }
           .flex {
             display: flex;

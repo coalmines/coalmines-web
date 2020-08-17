@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   backgroundColor,
   borderColor as regularBorderColor,
@@ -6,22 +6,28 @@ import {
   horizontalPadding,
 } from "../theme";
 
-const TextLine = ({ children, label = "", active }) => {
+const TextLine = ({ children, label = "", active, input }) => {
   const borderColor = active ? "#50C050" : regularBorderColor;
+  const [value, setValue] = useState("some input");
+  const onChange = (e) => setValue(e.target.value);
   return (
     <>
       <span className="text">
-        {children}
+        {(input && <input value={value} onChange={onChange} />) || children}
         {label !== "" && <span className="label">{label}</span>}
       </span>
       <style jsx>{`
+        input {
+          display: inline;
+          width: 80px;
+        }
         .text {
           position: relative;
           height: 20px;
           display: inline-flex;
           align-items: center;
           background: ${backgroundColor};
-          padding: 8px ${horizontalPadding} 6px;
+          padding: 16px ${horizontalPadding};
           border-bottom: 2px solid ${borderColor};
           border-left: 2px solid ${borderColor};
         }

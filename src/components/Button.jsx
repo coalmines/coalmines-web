@@ -1,15 +1,16 @@
 import React from "react";
 import {
   backgroundColor,
-  borderColor,
+  borderColor as regularBorderColor,
   textColor,
   horizontalPadding,
 } from "../theme";
 
-const Button = ({ children }) => {
+const Button = ({ children, disabled }) => {
+  const borderColor = disabled ? "#505050" : regularBorderColor;
   return (
     <>
-      <button>{children}</button>
+      <button disabled={disabled}>{children}</button>
       <style jsx>{`
         button {
           height: 36px;
