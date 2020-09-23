@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Data from "../components/Data";
 import Gauge from "../components/Gauge";
 import TextLine from "../components/TextLine";
+import Boop from "../components/Boop";
 import Button from "../components/Button";
 import LoadingAnimation from "../components/LoadingAnimation";
 
@@ -84,6 +85,12 @@ export default () => {
           <div className="flex column">
             <Button>Buttons are nice</Button>
             <Button disabled>have another</Button>
+          </div>
+        </div>
+        <div className="widget">
+          <h3>Boop</h3>
+          <div className="flex column">
+            <Boop>Boop!</Boop>
           </div>
         </div>
         <div className="big widget">
