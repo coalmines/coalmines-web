@@ -1,20 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const inc = 15;
+const getPosition = (element) => {
+  const rect = element.getBoundingClientRect();
+  return {
+    x: rect.x + rect.width / 2,
+    y: rect.y + rect.height / 2,
+  };
+};
 
 const Gauge = ({ color = "#706050" }) => {
-  const [angle, setAngle] = useState(42);
-  const incAngle = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (angle + inc > 360) {
-      setAngle(inc);
-    }
-    setAngle(angle + inc);
+  const [angle, setAngle] = useState(0);
+  const [mouseDown, setMouseDown] = useState(false);
+  const elementRef = useRef();
+  const position = useRef({ x: 0, y: 0 });
+
+  const mouseDownHandler = () => {
+    setMouseDown(true);
   };
+  const mouseLeave = () => {
+    setMouseDown(false);
+  };
+  const mouseMoveHandler = (e) => {
+    if (mouseDown) {
+      const { x, y } = position.current;
+      const ang = Math.atan2(e.clientY - y, e.clientX - x) / Math.PI + 1;
+      setAngle(ang * 180 - 180);
+    }
+  };
+  useEffect(() => {
+    position.current = getPosition(elementRef.current);
+  }, []);
+
   return (
     <>
-      <div className="outer" onClick={incAngle}>
+      <div
+        ref={elementRef}
+        className="outer"
+        onMouseDown={mouseDownHandler}
+        onMouseUp={mouseLeave}
+        onMouseMove={mouseMoveHandler}
+        onMouseLeave={mouseLeave}
+      >
         <div className="gauge">
           <hr />
         </div>
