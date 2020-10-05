@@ -1,0 +1,28 @@
+# see https://github.com/marketplace/actions/github-action-publish-binaries
+name: Release
+on:
+  release:
+    types: [created]
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
+        with:
+          persist-credentials: false
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build
+          tar -czf coalmines-web-$(git rev-parse --short HEAD).tar.gz out
+      - name: Publish Release 🚀
+        uses: skx/github-action-publish-binaries@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          coalmines-web-*.tar.gz
