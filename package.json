@@ -1,6 +1,6 @@
 {
   "name": "coalmines-web",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A web frontend for the CoalMines API",
   "main": "index.js",
   "scripts": {
