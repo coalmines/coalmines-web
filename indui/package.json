@@ -1,0 +1,29 @@
+{
+  "name": "@coalmines/indui",
+  "version": "1.0.0",
+  "description": "UI component library from the Coal Mines project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coalmines/coalmines-web.git"
+  },
+  "keywords": [
+    "ui",
+    "widgets",
+    "gui",
+    "react",
+    "components",
+    "coalmines",
+    "industrial",
+    "design"
+  ],
+  "author": "Daniel Maslowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coalmines/coalmines-web/issues"
+  },
+  "homepage": "https://github.com/coalmines/coalmines-web#readme"
+}
