@@ -1,6 +1,6 @@
 # indui
 
-This is `indui`, a React UI toolkit for the web, inspired by asthetics from the
+This is `indui`, a React UI toolkit for the web, inspired by aesthetics from the
 coal and steel industry and part of the [Coal Mines](https://coalmines.ruhr/) ⚒
 project.
 
