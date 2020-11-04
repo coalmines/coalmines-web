@@ -8,15 +8,16 @@ import {
   horizontalPadding,
 } from "../theme";
 
-const Boop = ({ children }) => {
+const Boop = ({ onClick, children }) => {
   const [boop, setBoop] = useState(false);
 
   return (
     <>
       <button
-        onClick={() => {
+        onClick={(e) => {
           setBoop(true);
           window.setTimeout(() => setBoop(false), 200);
+          onClick(e);
         }}
         className={classnames({ boop })}
       >
