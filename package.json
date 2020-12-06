@@ -28,7 +28,7 @@
   "homepage": "https://github.com/coalmines/coalmines-web#readme",
   "dependencies": {
     "classnames": "^2.2.6",
-    "next": "^9.5.5",
+    "next": "^10.0.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "styled-jsx": "^3.3.1"
