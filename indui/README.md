@@ -28,6 +28,8 @@ export default () => (
 );
 ```
 
+![Boop component screenshot](docs/img/boop.png)
+
 ## Status
 
 This project is mostly a draft by now and still under development. Feel free to
