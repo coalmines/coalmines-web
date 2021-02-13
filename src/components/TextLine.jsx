@@ -8,7 +8,7 @@ import {
 
 const TextLine = ({ children, label = "", active, onEdit }) => {
   const borderColor = active ? "#50C050" : regularBorderColor;
-  const [value, setValue] = useState("some input");
+  const [value, setValue] = useState("");
   const onChange = (e) => {
     const { value } = e.target;
     setValue(value);

@@ -8,7 +8,7 @@ import {
 const Input = ({ children, label = "", active, placeholder, onEdit }) => {
   const borderColor = active ? "#50C050" : regularBorderColor;
   const backgroundColor = "#FDFDFF";
-  const [value, setValue] = useState("some input");
+  const [value, setValue] = useState("");
   const onChange = (e) => {
     const { value } = e.target;
     setValue(value);
