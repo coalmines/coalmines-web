@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import {
-  backgroundColor,
   borderColor as regularBorderColor,
   textColor,
   horizontalPadding,
 } from "../theme";
 
-const TextLine = ({ children, label = "", active, onEdit }) => {
+const Input = ({ children, label = "", active, placeholder, onEdit }) => {
   const borderColor = active ? "#50C050" : regularBorderColor;
+  const backgroundColor = "#FDFDFF";
   const [value, setValue] = useState("some input");
   const onChange = (e) => {
     const { value } = e.target;
@@ -17,17 +17,20 @@ const TextLine = ({ children, label = "", active, onEdit }) => {
   return (
     <>
       <span className="border">
-        <div className="text">{children}</div>
+        <input placeholder={placeholder} value={value} onChange={onChange} />
         {label !== "" && <span className="label">{label}</span>}
       </span>
       <style jsx>{`
-        .text {
+        input {
           display: flex;
           align-items: center;
           width: 100%;
           height: 100%;
           padding: 0 ${horizontalPadding};
           font: 13px sans-serif;
+          outline: none;
+          border: none;
+          background: ${backgroundColor};
         }
         .border {
           display: inline-block;
@@ -47,7 +50,7 @@ const TextLine = ({ children, label = "", active, onEdit }) => {
           display: inline-flex;
           align-items: center;
           font-size: 8px;
-          content: "";
+          content: "✏️";
         }
         .label {
           width: calc(100% - ${horizontalPadding} + 2px);
@@ -66,4 +69,4 @@ const TextLine = ({ children, label = "", active, onEdit }) => {
   );
 };
 
-export default TextLine;
+export default Input;

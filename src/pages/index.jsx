@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Data from "../components/Data";
 import Gauge from "../components/Gauge";
+import Input from "../components/Input";
 import TextLine from "../components/TextLine";
 import Boop from "../components/Boop";
 import Button from "../components/Button";
@@ -43,30 +44,34 @@ export default () => {
             <Tabs menu={menu} />
           )}
         </div>
-        <div className="widget big">
+        <div className="widget">
           <h3>TextLine</h3>
           <div className="flex column">
             <TextLine>regular text</TextLine>
-            <TextLine input>a text line</TextLine>
             <TextLine label="woop woop">a labeled text</TextLine>
-            <TextLine label="yeehaw" input>
-              a labeled input
-            </TextLine>
+          </div>
+        </div>
+        <div className="widget">
+          <h3>Input</h3>
+          <div className="flex column">
+            <Input label="yeehaw">a labeled input</Input>
+            <Input>a simple input</Input>
+            <Input placeholder="placeholder" />
           </div>
         </div>
         <div className="widget">
           <h3>Combined Input + Boop</h3>
           <div className="flex column">
             <div className="flex">
-              <TextLine input label="ask" placeholder="Enter question">
+              <Input label="ask" placeholder="Enter question">
                 a text line
-              </TextLine>
+              </Input>
               <Boop small>Go!</Boop>
             </div>
             <div className="flex">
-              <TextLine input label="answer" placeholder="How much?">
+              <Input label="answer" placeholder="How much?">
                 42
-              </TextLine>
+              </Input>
               <Boop>Okay</Boop>
             </div>
           </div>
