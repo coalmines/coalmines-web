@@ -8,7 +8,7 @@ import {
   horizontalPadding,
 } from "../theme";
 
-const Boop = ({ onClick, children }) => {
+const Boop = ({ onClick, small, children }) => {
   const [boop, setBoop] = useState(false);
 
   return (
@@ -25,8 +25,11 @@ const Boop = ({ onClick, children }) => {
       </button>
       <style jsx>{`
         button {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
           outline: none;
-          height: 36px;
+          height: ${small ? "30px" : "36px"};
           position: relative;
           border: none;
           background: ${backgroundColor};
