@@ -28,6 +28,7 @@ export default () => {
           <h3>Boop</h3>
           <div className="flex column">
             <Boop>Boop!</Boop>
+            <Boop small>Small Boop!</Boop>
           </div>
         </div>
         <div className="big widget">
@@ -42,11 +43,32 @@ export default () => {
             <Tabs menu={menu} />
           )}
         </div>
-        <div className="widget">
+        <div className="widget big">
           <h3>TextLine</h3>
           <div className="flex column">
+            <TextLine>regular text</TextLine>
             <TextLine input>a text line</TextLine>
             <TextLine label="woop woop">a labeled text</TextLine>
+            <TextLine label="yeehaw" input>
+              a labeled input
+            </TextLine>
+          </div>
+        </div>
+        <div className="widget">
+          <h3>Combined Input + Boop</h3>
+          <div className="flex column">
+            <div className="flex">
+              <TextLine input label="ask" placeholder="Enter question">
+                a text line
+              </TextLine>
+              <Boop small>Go!</Boop>
+            </div>
+            <div className="flex">
+              <TextLine input label="answer" placeholder="How much?">
+                42
+              </TextLine>
+              <Boop>Okay</Boop>
+            </div>
           </div>
         </div>
         <div className="widget">
