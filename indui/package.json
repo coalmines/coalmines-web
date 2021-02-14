@@ -1,6 +1,6 @@
 {
   "name": "@coalmines/indui",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "UI component library from the Coal Mines project",
   "main": "index.js",
   "scripts": {
