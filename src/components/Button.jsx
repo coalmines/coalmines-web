@@ -6,7 +6,7 @@ import {
   horizontalPadding,
 } from "../theme";
 
-const Button = ({ children, small, disabled, active }) => {
+const Button = ({ onClick, children, small, disabled, active }) => {
   const borderColor = disabled
     ? "#505050"
     : active
@@ -14,7 +14,9 @@ const Button = ({ children, small, disabled, active }) => {
     : regularBorderColor;
   return (
     <>
-      <button disabled={disabled}>{children}</button>
+      <button onClick={onClick} disabled={disabled}>
+        {children}
+      </button>
       <style jsx>{`
         button {
           display: inline-flex;
