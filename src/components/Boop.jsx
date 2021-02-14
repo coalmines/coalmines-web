@@ -33,7 +33,7 @@ const Boop = ({ onClick, small, children }) => {
           position: relative;
           border: none;
           background: ${backgroundColor};
-          padding: 8px ${horizontalPadding};
+          padding: 0 ${horizontalPadding};
           border-top: 2px solid ${borderColor};
           border-bottom: 2px solid ${borderColor};
         }

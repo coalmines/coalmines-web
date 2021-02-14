@@ -6,27 +6,35 @@ import {
   horizontalPadding,
 } from "../theme";
 
-const Button = ({ children, disabled }) => {
-  const borderColor = disabled ? "#505050" : regularBorderColor;
+const Button = ({ children, small, disabled, active }) => {
+  const borderColor = disabled
+    ? "#505050"
+    : active
+    ? "#50C050"
+    : regularBorderColor;
   return (
     <>
       <button disabled={disabled}>{children}</button>
       <style jsx>{`
         button {
-          height: 36px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          outline: none;
+          height: ${small ? "30px" : "36px"};
           position: relative;
           border: none;
           background: ${backgroundColor};
-          padding: 8px ${horizontalPadding};
+          padding: 0 ${horizontalPadding};
           border-top: 2px solid ${borderColor};
-          border-bottom: 2px solid ${borderColor};
         }
         button::before,
         button::after {
           position: absolute;
           width: ${horizontalPadding};
-          height: ${horizontalPadding};
+          height: 100%;
           content: "";
+          border-bottom: 2px solid ${borderColor};
         }
         button::before {
           bottom: 0;
