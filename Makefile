@@ -1,5 +1,6 @@
 export NODE_ENV:=production
 export DIST_DIR:=dist
+export DOCS_DIR:=docs
 
 .PHONY: ui
 ui: ui-prebuild
@@ -13,6 +14,10 @@ ui-prebuild:
 
 dist:
 	npm run build -- -o $(DIST_DIR)
+
+.PHONY: docs
+docs:
+	npm run docs -- --docs -o $(DOCS_DIR)
 
 .PHONY: prepare
 prepare:
