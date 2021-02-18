@@ -9,7 +9,7 @@ import LoadingAnimation from "../components/LoadingAnimation";
 import Tabs from "../components/Tabs";
 import menu from "../fixtures/menu.json";
 
-export default () => {
+const Page = () => {
   const [loading, setLoading] = useState(true);
   setTimeout(() => setLoading(false), 3400);
   return (
@@ -176,3 +176,5 @@ export default () => {
     </div>
   );
 };
+
+export default Page;
