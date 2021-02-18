@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Button from "../components/Button";
+import LoadingAnimation from "../components/LoadingAnimation";
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  subcomponents={{ LoadingAnimation }}
+  argTypes={{ onClick: { action: 'click' } }}
+/>
+
+export const Template = (args) => <Button {...args } />
+
+## Description
+
+## Usage
+
+**Do** use the `Button` for single occasions as well as multiple ones in a row.
+It is suitable for toolbars.
+**Do** use the `Button` for asynchronous calls. You can reflect a loading state
+by setting it to `disabled` and rendering a loading animation, then switch back
+to the original content when done.
+
+**Do not** mix small and normal sized `Button`s. Keep horizontal and vertical
+alignments.
+**Do not** combine the `Button` in junction with other controls such as inputs.
+It is okay to put other controls nearby. Leave space in that occasion.
+
+## Regular
+
+<Canvas>
+  <Story name="regular" args={{
+    children: "Click!",
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Variants
+
+The `Button` can be `small`, `disabled` and `active`.
+
+### Small
+
+<Canvas>
+  <Story name="small" args={{
+    small: true,
+    children: "I am small",
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Active
+
+<Canvas>
+  <Story name="active" args={{
+    active: true,
+    children: "I am active",
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story name="disabled" args={{
+    disabled: true,
+    children: "I am disabled",
+  }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<!--
+<Canvas>
+  <Button disabled>
+    <LoadingAnimation>...</LoadingAnimation>
+  </Button>
+</Canvas>
+-->
+
+### Toolbar
+
+<Canvas>
+  <Button>one</Button>
+  <Button active>two</Button>
+  <Button>three</Button>
+  <Button disabled>four</Button>
+  <Button>five</Button>
+</Canvas>
