@@ -2,8 +2,8 @@ import React from "react";
 
 const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
   return (
-    <>
-      <div className={type}>{children}</div>
+    <div className={type}>
+      {children}
       <style jsx>{`
         @keyframes spinner {
           100% {
@@ -45,7 +45,7 @@ const LoadingAnimation = ({ children, type = "spinner", duration = "2s" }) => {
           animation: swing ${duration} infinite ease-in-out;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 
